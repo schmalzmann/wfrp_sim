@@ -55,7 +55,7 @@
 				}
 			],
 			"type" : "INTERNAL",
-			"value" : "/home/fdachs/WFRPSIM/build"
+			"value" : "/home/fdachs/CodeProjects/WFRPSIM/build"
 		},
 		{
 			"name" : "CMAKE_CACHE_MAJOR_VERSION",
@@ -467,7 +467,7 @@
 				}
 			],
 			"type" : "INTERNAL",
-			"value" : "/home/fdachs/WFRPSIM"
+			"value" : "/home/fdachs/CodeProjects/WFRPSIM"
 		},
 		{
 			"name" : "CMAKE_INSTALL_PREFIX",
@@ -1003,7 +1003,7 @@
 				}
 			],
 			"type" : "STATIC",
-			"value" : "/home/fdachs/WFRPSIM/build"
+			"value" : "/home/fdachs/CodeProjects/WFRPSIM/build"
 		},
 		{
 			"name" : "WFRP_Simulator_IS_TOP_LEVEL",
@@ -1027,7 +1027,7 @@
 				}
 			],
 			"type" : "STATIC",
-			"value" : "/home/fdachs/WFRPSIM"
+			"value" : "/home/fdachs/CodeProjects/WFRPSIM"
 		}
 	],
 	"kind" : "cache",

@@ -4,7 +4,7 @@
 # compile CXX with /usr/bin/c++
 CXX_DEFINES = 
 
-CXX_INCLUDES = -I/home/fdachs/WFRPSIM/include -I/home/fdachs/WFRPSIM/source
+CXX_INCLUDES = -I/home/fdachs/CodeProjects/WFRPSIM/include -I/home/fdachs/CodeProjects/WFRPSIM/source
 
 CXX_FLAGS = 
 

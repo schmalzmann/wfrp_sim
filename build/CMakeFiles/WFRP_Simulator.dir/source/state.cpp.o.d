@@ -1,6 +1,8 @@
 CMakeFiles/WFRP_Simulator.dir/source/state.cpp.o: \
- /home/fdachs/WFRPSIM/source/state.cpp /usr/include/stdc-predef.h \
- /home/fdachs/WFRPSIM/include/state.hpp /usr/include/c++/11/string \
+ /home/fdachs/CodeProjects/WFRPSIM/source/state.cpp \
+ /usr/include/stdc-predef.h \
+ /home/fdachs/CodeProjects/WFRPSIM/include/state.hpp \
+ /usr/include/c++/11/string \
  /usr/include/x86_64-linux-gnu/c++/11/bits/c++config.h \
  /usr/include/x86_64-linux-gnu/c++/11/bits/os_defines.h \
  /usr/include/features.h /usr/include/features-time64.h \
@@ -128,8 +130,8 @@ CMakeFiles/WFRP_Simulator.dir/source/state.cpp.o: \
  /usr/include/x86_64-linux-gnu/bits/types/error_t.h \
  /usr/include/c++/11/bits/charconv.h \
  /usr/include/c++/11/bits/basic_string.tcc \
- /home/fdachs/WFRPSIM/include/utility.hpp /usr/include/c++/11/map \
- /usr/include/c++/11/bits/stl_tree.h \
+ /home/fdachs/CodeProjects/WFRPSIM/include/utility.hpp \
+ /usr/include/c++/11/map /usr/include/c++/11/bits/stl_tree.h \
  /usr/include/c++/11/ext/aligned_buffer.h \
  /usr/include/c++/11/bits/node_handle.h \
  /usr/include/c++/11/bits/stl_map.h /usr/include/c++/11/tuple \

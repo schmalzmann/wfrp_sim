@@ -385,8 +385,8 @@
 	"kind" : "cmakeFiles",
 	"paths" : 
 	{
-		"build" : "/home/fdachs/WFRPSIM/build",
-		"source" : "/home/fdachs/WFRPSIM"
+		"build" : "/home/fdachs/CodeProjects/WFRPSIM/build",
+		"source" : "/home/fdachs/CodeProjects/WFRPSIM"
 	},
 	"version" : 
 	{

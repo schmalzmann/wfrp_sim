@@ -43,11 +43,11 @@
 			[
 				{
 					"backtrace" : 2,
-					"path" : "/home/fdachs/WFRPSIM/include"
+					"path" : "/home/fdachs/CodeProjects/WFRPSIM/include"
 				},
 				{
 					"backtrace" : 2,
-					"path" : "/home/fdachs/WFRPSIM/source"
+					"path" : "/home/fdachs/CodeProjects/WFRPSIM/source"
 				}
 			],
 			"language" : "CXX",
