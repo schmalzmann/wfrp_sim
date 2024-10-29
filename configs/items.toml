@@ -1,0 +1,8 @@
+[[item]]
+id = 0
+name = "club"
+damage = 3
+modifier = "strength_bonus"
+qualities = [
+    "pummel"
+]

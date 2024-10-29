@@ -1,0 +1,131 @@
+[[entity]]
+name = "erich_loewenzahn"
+type = "player_character"
+attributes = [
+    ["movement",4],
+    ["weapon_skill",31],
+    ["ballistic_skill",33],
+    ["strength",31],
+    ["toughness",37],
+    ["initiative",34],
+    ["agility",31],
+    ["dexterity",34],
+    ["intelligence",28],
+    ["willpower",35],
+    ["fellowship",29],
+    ["fate",4],
+    ["resilience",2],
+    ["fortune",4],
+    ["resolve",2],
+    ["corruption",4]
+]
+talents = [
+    ["warrior_born","",1],
+    ["suave","",1],
+    ["strong_legs","",1],
+    ["hardy","",1],
+    ["rover","",1],
+    ["ambidextrous","",1],
+    ["super_numerate","",1],
+    ["doomed","Old age will be thy end.",1],
+    ["dual_wield","",1]
+]
+skills = [
+    ["art","",0],
+    ["athletics","",0],
+    ["bribery","",0],
+    ["charm","",3],
+    ["charm_animal","",5],
+    ["climb","",5],
+    ["cool","",3],
+    ["consume_alcohol","",0],
+    ["dodge","",0],
+    ["drive","",0],
+    ["endurance","",10],
+    ["entertain","",0],
+    ["gamble","",0],
+    ["gossip","",0],
+    ["haggle","",0],
+    ["intimidate","",0],
+    ["intuition","",0],
+    ["leadership","",0],
+    ["melee","basic",5],
+    ["navigation","",0],
+    ["outdoor_survival","",5],
+    ["perception","",10],
+    ["ride","",0],
+    ["row","",0],
+    ["stealth","",0],
+    ["lore","herbs",10],
+    ["trade","herbalist",10],
+    ["swim","",5],
+    ["language","bretonnian",5],
+    ["language","wastelander",5],
+    ["language","reikspiel",3],
+]
+traits = [
+    ["fear","mutant",1],
+    ["fear","boar",1],
+    ["star_sign","piper",1],
+    ["race","human",1]
+]
+
+[[entity]]
+name = "boar"
+type = "beast"
+attributes = [
+    ["movement",7],
+    ["weapon_skill",35],
+    ["ballistic_skill",0],
+    ["strength",33],
+    ["toughness",35],
+    ["initiative",33],
+    ["agility",35],
+    ["dexterity",0],
+    ["intelligence",10],
+    ["willpower",10],
+    ["fellowship",0],
+]
+traits = [
+    ["armour","",1],
+    ["bestial","",1],
+    ["horns","tusk",4],
+    ["night_vision","",1],
+    ["skittish","",1],
+    ["stride","any",1],
+    ["weapon","",6],
+    ["race","boar",1]
+]
+
+[[test]]
+#simple test
+name = "melee"
+category = "brawl"
+value_modifier = 0
+success_level_modifier = 0
+
+[[test]]
+#simple opposed test
+name = ["strength","endurance"]
+category = ["",""]
+value_modifier = [0,-10]
+success_level_modifier = [0,0]
+
+[[test]]
+#simple extended test
+name = "trade"
+category = "apothecary"
+value_modifier = 20
+success_level_modifier = 0
+threshold = 15
+
+[[test]]
+#opposed extended test
+name = ["pick_lock","acute_sense"]
+category = ["","sound"]
+value_modifier = [0,10]
+success_level_modifier = [1,0]
+#if values are the same it is a race to the threshold (with the same threshold for both)
+#if the values are different, the second party get a lead equal to the first value. the first party wins
+#if they reduce the lead to zero, the second party wins if it extends the lead to the second value
+threshold = [5,15]
