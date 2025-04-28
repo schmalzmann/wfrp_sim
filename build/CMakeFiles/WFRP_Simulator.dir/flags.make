@@ -6,5 +6,5 @@ CXX_DEFINES =
 
 CXX_INCLUDES = -I/home/fdachs/Coding/wfrp_sim/include -I/home/fdachs/Coding/wfrp_sim/source
 
-CXX_FLAGS = 
+CXX_FLAGS = -std=c++20
 

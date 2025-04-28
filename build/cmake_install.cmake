@@ -44,7 +44,7 @@ endif()
 
 if(NOT CMAKE_INSTALL_LOCAL_ONLY)
   # Include the install script for the subdirectory.
-  include("/home/fdachs/Coding/wfrp_sim/build/tests/cmake_install.cmake")
+  include("/home/fdachs/Coding/wfrp_sim/build/test/cmake_install.cmake")
 endif()
 
 if(CMAKE_INSTALL_COMPONENT)

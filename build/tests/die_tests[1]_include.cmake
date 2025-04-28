@@ -1,5 +1,0 @@
-if(EXISTS "/home/fdachs/Coding/wfrp_sim/build/tests/die_tests[1]_tests.cmake")
-  include("/home/fdachs/Coding/wfrp_sim/build/tests/die_tests[1]_tests.cmake")
-else()
-  add_test(die_tests_NOT_BUILT die_tests_NOT_BUILT)
-endif()

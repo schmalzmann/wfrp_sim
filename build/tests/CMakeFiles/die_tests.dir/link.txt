@@ -1,1 +1,0 @@
-/usr/bin/c++ CMakeFiles/die_tests.dir/__/source/die.cpp.o CMakeFiles/die_tests.dir/test_die_roll.cpp.o -o die_tests  ../lib/libgtest_main.a ../lib/libgtest.a 

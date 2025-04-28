@@ -1,42 +1,22 @@
-name: Build and Test C++ Project
+name: Build and Test
 
-# Run on pushes to the main branch or on pull requests
-on:
-  push:
-    branches:
-      - main  # Change this to your default branch if needed
-  pull_request:
-    branches:
-      - main  # Change this to your default branch if needed
+on: [push, pull_request]
 
 jobs:
   build:
-    runs-on: ubuntu-latest  # You can change this to macos-latest or windows-latest if needed
+    runs-on: ubuntu-latest
 
     steps:
-    - name: Checkout repository
-      uses: actions/checkout@v3  # Checks out your repository's code
-
-    - name: Set up CMake
-      uses: lukka/setup-cmake@v3  # Sets up CMake on the runner
-      with:
-        cmake-version: '3.21'  # Change this to the desired version of CMake
-
-    - name: Set up GCC
-      uses: actions/setup-gcc@v1
-      with:
-        gcc-version: '10'  # Choose a GCC version that matches your project
-
-    - name: Create build directory
-      run: cd tests && mkdir -p build && cd build
-
-    - name: Build project
+    - uses: actions/checkout@v2
+    - name: Install dependencies
+      run: sudo apt-get install -y libgtest-dev cmake
+    - name: Build
       run: |
+        mkdir build
         cd build
         cmake ..
-        cmake --build .  # This builds your project
-
-    - name: Run tests
+        make
+    - name: Test
       run: |
         cd build
-        ctest --verbose  # Run the tests with CTest and show detailed output
+        ctest
