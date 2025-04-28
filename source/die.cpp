@@ -4,11 +4,14 @@ Die::Die(int sides)
     :m_rng(m_randDev())
     ,m_dist(std::uniform_int_distribution<>(1,sides))
 {
-    m_sides = sides;
+    if(sides < 1) m_sides = 1; //default to 1 side
+    else m_sides = sides;
 }
 
 Die::Die(const Die& d){
     Die(d.m_sides);
+    m_value = d.m_value;
+    m_rng = d.m_rng;
 }
 
 Die::~Die(){

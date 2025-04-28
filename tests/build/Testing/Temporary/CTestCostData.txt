@@ -1,0 +1,18 @@
+DieTest.Constructor 1 0.00417547
+DieTest.Roll 1 0.00504
+DieTest.Set 1 0.00423717
+DieTest.Flip 1 0.005087
+DieTest.Addition 1 0.00523231
+DieTest.AdditionWithInt 1 0.0041651
+DieTest.Subtraction 1 0.00387341
+DieTest.SubtractionWithInt 1 0.0045064
+DieTest.CopyConstructor 1 0.00450867
+DieTest.AssignmentOperator 1 0.00474119
+DieTest.Destructor 1 0.00527908
+DieTest.InvalidSides 1 0.00445329
+DieTest.InvalidValue 1 0.0041751
+DieTest.Randomness 1 0.00485949
+DieTest.RandomnessDistribution 1 0.0044125
+DieTest.RandomnessUniformity 1 0.00466351
+die_tests 1 0.00639544
+---
