@@ -15,8 +15,9 @@ jobs:
         mkdir build
         cd build
         cmake ..
-        make
-    - name: Test
+        cmake --build .  # This builds your project
+
+    - name: Run tests
       run: |
         cd build
-        ctest
+        ctest --verbose  # Run the tests with CTest and show detailed output
