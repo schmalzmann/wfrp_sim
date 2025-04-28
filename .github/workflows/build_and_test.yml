@@ -13,7 +13,7 @@ jobs:
     - name: Install dependencies
       run: |
         sudo apt-get update
-        sudo apt-get install -y cmake g++ ninja-build
+        sudo apt-get install -y cmake g++ ninja-build libboost-all-dev
 
     - name: Configure CMake
       run: cmake -S . -B build -G Ninja
