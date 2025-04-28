@@ -1,0 +1,30 @@
+jobs:
+  build:
+    runs-on: ${{ matrix.os }}
+    strategy:
+      matrix:
+        os: [ubuntu-latest, windows-latest, macos-latest]
+
+    steps:
+    - name: Checkout repository
+      uses: actions/checkout@v3
+    - name: Set up CMake
+      uses: cmake/setup-cmake@v3
+      with:
+        cmake-version: '3.22.1'
+    - name: Set up GCC
+      uses: actions/setup-gcc@v1
+      with:
+        gcc-version: '10'
+    - name: Create build directory
+      run: mkdir -p build && cd build
+    - name: Build project
+      run: |
+        cd build
+        cmake ..
+        cmake --build .
+    - name: Run tests
+      run: |
+        cd build
+        ctest --verbose
+
