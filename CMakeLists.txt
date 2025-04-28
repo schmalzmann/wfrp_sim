@@ -12,4 +12,4 @@ add_executable( WFRP_Simulator wfrp_simulator.cpp ${HEADERS} ${SOURCES})
 
 target_include_directories( WFRP_Simulator PUBLIC ${INCLUDE_PATH} ${SOURCE_PATH} )
 
-add_subdirectory( tests )
+add_subdirectory( test )

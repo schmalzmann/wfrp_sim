@@ -4,5 +4,7 @@
 # 
 # This file includes the relevant testing commands required for 
 # testing this directory and lists subdirectories to be tested as well.
-add_test([=[die_test]=] "/home/fdachs/Coding/wfrp_sim/build/test/runTests")
-set_tests_properties([=[die_test]=] PROPERTIES  _BACKTRACE_TRIPLES "/home/fdachs/Coding/wfrp_sim/test/CMakeLists.txt;18;add_test;/home/fdachs/Coding/wfrp_sim/test/CMakeLists.txt;0;")
+include("/home/fdachs/Coding/wfrp_sim/build/test/die_tests[1]_include.cmake")
+add_test([=[die_tests]=] "/home/fdachs/Coding/wfrp_sim/build/test/die_tests")
+set_tests_properties([=[die_tests]=] PROPERTIES  _BACKTRACE_TRIPLES "/home/fdachs/Coding/wfrp_sim/test/CMakeLists.txt;39;add_test;/home/fdachs/Coding/wfrp_sim/test/CMakeLists.txt;0;")
+subdirs("../_deps/googletest-build")

@@ -85,6 +85,51 @@ rebuild_cache:
 rebuild_cache/fast: rebuild_cache
 .PHONY : rebuild_cache/fast
 
+# Special rule for the target list_install_components
+list_install_components:
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --cyan "Available install components are: \"gmock\" \"gtest\""
+.PHONY : list_install_components
+
+# Special rule for the target list_install_components
+list_install_components/fast: list_install_components
+.PHONY : list_install_components/fast
+
+# Special rule for the target install
+install: preinstall
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --cyan "Install the project..."
+	/usr/bin/cmake -P cmake_install.cmake
+.PHONY : install
+
+# Special rule for the target install
+install/fast: preinstall/fast
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --cyan "Install the project..."
+	/usr/bin/cmake -P cmake_install.cmake
+.PHONY : install/fast
+
+# Special rule for the target install/local
+install/local: preinstall
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --cyan "Installing only the local directory..."
+	/usr/bin/cmake -DCMAKE_INSTALL_LOCAL_ONLY=1 -P cmake_install.cmake
+.PHONY : install/local
+
+# Special rule for the target install/local
+install/local/fast: preinstall/fast
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --cyan "Installing only the local directory..."
+	/usr/bin/cmake -DCMAKE_INSTALL_LOCAL_ONLY=1 -P cmake_install.cmake
+.PHONY : install/local/fast
+
+# Special rule for the target install/strip
+install/strip: preinstall
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --cyan "Installing the project stripped..."
+	/usr/bin/cmake -DCMAKE_INSTALL_DO_STRIP=1 -P cmake_install.cmake
+.PHONY : install/strip
+
+# Special rule for the target install/strip
+install/strip/fast: preinstall/fast
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --cyan "Installing the project stripped..."
+	/usr/bin/cmake -DCMAKE_INSTALL_DO_STRIP=1 -P cmake_install.cmake
+.PHONY : install/strip/fast
+
 # The main all target
 all: cmake_check_build_system
 	cd /home/fdachs/Coding/wfrp_sim/build && $(CMAKE_COMMAND) -E cmake_progress_start /home/fdachs/Coding/wfrp_sim/build/CMakeFiles /home/fdachs/Coding/wfrp_sim/build/test//CMakeFiles/progress.marks
@@ -117,169 +162,25 @@ depend:
 .PHONY : depend
 
 # Convenience name for target.
-test/CMakeFiles/runTests.dir/rule:
-	cd /home/fdachs/Coding/wfrp_sim/build && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 test/CMakeFiles/runTests.dir/rule
-.PHONY : test/CMakeFiles/runTests.dir/rule
+test/CMakeFiles/die_tests.dir/rule:
+	cd /home/fdachs/Coding/wfrp_sim/build && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 test/CMakeFiles/die_tests.dir/rule
+.PHONY : test/CMakeFiles/die_tests.dir/rule
 
 # Convenience name for target.
-runTests: test/CMakeFiles/runTests.dir/rule
-.PHONY : runTests
+die_tests: test/CMakeFiles/die_tests.dir/rule
+.PHONY : die_tests
 
 # fast build rule for target.
-runTests/fast:
-	cd /home/fdachs/Coding/wfrp_sim/build && $(MAKE) $(MAKESILENT) -f test/CMakeFiles/runTests.dir/build.make test/CMakeFiles/runTests.dir/build
-.PHONY : runTests/fast
-
-__/source/action_node.o: __/source/action_node.cpp.o
-.PHONY : __/source/action_node.o
-
-# target to build an object file
-__/source/action_node.cpp.o:
-	cd /home/fdachs/Coding/wfrp_sim/build && $(MAKE) $(MAKESILENT) -f test/CMakeFiles/runTests.dir/build.make test/CMakeFiles/runTests.dir/__/source/action_node.cpp.o
-.PHONY : __/source/action_node.cpp.o
-
-__/source/action_node.i: __/source/action_node.cpp.i
-.PHONY : __/source/action_node.i
-
-# target to preprocess a source file
-__/source/action_node.cpp.i:
-	cd /home/fdachs/Coding/wfrp_sim/build && $(MAKE) $(MAKESILENT) -f test/CMakeFiles/runTests.dir/build.make test/CMakeFiles/runTests.dir/__/source/action_node.cpp.i
-.PHONY : __/source/action_node.cpp.i
-
-__/source/action_node.s: __/source/action_node.cpp.s
-.PHONY : __/source/action_node.s
-
-# target to generate assembly for a file
-__/source/action_node.cpp.s:
-	cd /home/fdachs/Coding/wfrp_sim/build && $(MAKE) $(MAKESILENT) -f test/CMakeFiles/runTests.dir/build.make test/CMakeFiles/runTests.dir/__/source/action_node.cpp.s
-.PHONY : __/source/action_node.cpp.s
-
-__/source/action_provider.o: __/source/action_provider.cpp.o
-.PHONY : __/source/action_provider.o
-
-# target to build an object file
-__/source/action_provider.cpp.o:
-	cd /home/fdachs/Coding/wfrp_sim/build && $(MAKE) $(MAKESILENT) -f test/CMakeFiles/runTests.dir/build.make test/CMakeFiles/runTests.dir/__/source/action_provider.cpp.o
-.PHONY : __/source/action_provider.cpp.o
-
-__/source/action_provider.i: __/source/action_provider.cpp.i
-.PHONY : __/source/action_provider.i
-
-# target to preprocess a source file
-__/source/action_provider.cpp.i:
-	cd /home/fdachs/Coding/wfrp_sim/build && $(MAKE) $(MAKESILENT) -f test/CMakeFiles/runTests.dir/build.make test/CMakeFiles/runTests.dir/__/source/action_provider.cpp.i
-.PHONY : __/source/action_provider.cpp.i
-
-__/source/action_provider.s: __/source/action_provider.cpp.s
-.PHONY : __/source/action_provider.s
-
-# target to generate assembly for a file
-__/source/action_provider.cpp.s:
-	cd /home/fdachs/Coding/wfrp_sim/build && $(MAKE) $(MAKESILENT) -f test/CMakeFiles/runTests.dir/build.make test/CMakeFiles/runTests.dir/__/source/action_provider.cpp.s
-.PHONY : __/source/action_provider.cpp.s
-
-__/source/attribute.o: __/source/attribute.cpp.o
-.PHONY : __/source/attribute.o
-
-# target to build an object file
-__/source/attribute.cpp.o:
-	cd /home/fdachs/Coding/wfrp_sim/build && $(MAKE) $(MAKESILENT) -f test/CMakeFiles/runTests.dir/build.make test/CMakeFiles/runTests.dir/__/source/attribute.cpp.o
-.PHONY : __/source/attribute.cpp.o
-
-__/source/attribute.i: __/source/attribute.cpp.i
-.PHONY : __/source/attribute.i
-
-# target to preprocess a source file
-__/source/attribute.cpp.i:
-	cd /home/fdachs/Coding/wfrp_sim/build && $(MAKE) $(MAKESILENT) -f test/CMakeFiles/runTests.dir/build.make test/CMakeFiles/runTests.dir/__/source/attribute.cpp.i
-.PHONY : __/source/attribute.cpp.i
-
-__/source/attribute.s: __/source/attribute.cpp.s
-.PHONY : __/source/attribute.s
-
-# target to generate assembly for a file
-__/source/attribute.cpp.s:
-	cd /home/fdachs/Coding/wfrp_sim/build && $(MAKE) $(MAKESILENT) -f test/CMakeFiles/runTests.dir/build.make test/CMakeFiles/runTests.dir/__/source/attribute.cpp.s
-.PHONY : __/source/attribute.cpp.s
-
-__/source/condition.o: __/source/condition.cpp.o
-.PHONY : __/source/condition.o
-
-# target to build an object file
-__/source/condition.cpp.o:
-	cd /home/fdachs/Coding/wfrp_sim/build && $(MAKE) $(MAKESILENT) -f test/CMakeFiles/runTests.dir/build.make test/CMakeFiles/runTests.dir/__/source/condition.cpp.o
-.PHONY : __/source/condition.cpp.o
-
-__/source/condition.i: __/source/condition.cpp.i
-.PHONY : __/source/condition.i
-
-# target to preprocess a source file
-__/source/condition.cpp.i:
-	cd /home/fdachs/Coding/wfrp_sim/build && $(MAKE) $(MAKESILENT) -f test/CMakeFiles/runTests.dir/build.make test/CMakeFiles/runTests.dir/__/source/condition.cpp.i
-.PHONY : __/source/condition.cpp.i
-
-__/source/condition.s: __/source/condition.cpp.s
-.PHONY : __/source/condition.s
-
-# target to generate assembly for a file
-__/source/condition.cpp.s:
-	cd /home/fdachs/Coding/wfrp_sim/build && $(MAKE) $(MAKESILENT) -f test/CMakeFiles/runTests.dir/build.make test/CMakeFiles/runTests.dir/__/source/condition.cpp.s
-.PHONY : __/source/condition.cpp.s
-
-__/source/condition_provider.o: __/source/condition_provider.cpp.o
-.PHONY : __/source/condition_provider.o
-
-# target to build an object file
-__/source/condition_provider.cpp.o:
-	cd /home/fdachs/Coding/wfrp_sim/build && $(MAKE) $(MAKESILENT) -f test/CMakeFiles/runTests.dir/build.make test/CMakeFiles/runTests.dir/__/source/condition_provider.cpp.o
-.PHONY : __/source/condition_provider.cpp.o
-
-__/source/condition_provider.i: __/source/condition_provider.cpp.i
-.PHONY : __/source/condition_provider.i
-
-# target to preprocess a source file
-__/source/condition_provider.cpp.i:
-	cd /home/fdachs/Coding/wfrp_sim/build && $(MAKE) $(MAKESILENT) -f test/CMakeFiles/runTests.dir/build.make test/CMakeFiles/runTests.dir/__/source/condition_provider.cpp.i
-.PHONY : __/source/condition_provider.cpp.i
-
-__/source/condition_provider.s: __/source/condition_provider.cpp.s
-.PHONY : __/source/condition_provider.s
-
-# target to generate assembly for a file
-__/source/condition_provider.cpp.s:
-	cd /home/fdachs/Coding/wfrp_sim/build && $(MAKE) $(MAKESILENT) -f test/CMakeFiles/runTests.dir/build.make test/CMakeFiles/runTests.dir/__/source/condition_provider.cpp.s
-.PHONY : __/source/condition_provider.cpp.s
-
-__/source/critical_provider.o: __/source/critical_provider.cpp.o
-.PHONY : __/source/critical_provider.o
-
-# target to build an object file
-__/source/critical_provider.cpp.o:
-	cd /home/fdachs/Coding/wfrp_sim/build && $(MAKE) $(MAKESILENT) -f test/CMakeFiles/runTests.dir/build.make test/CMakeFiles/runTests.dir/__/source/critical_provider.cpp.o
-.PHONY : __/source/critical_provider.cpp.o
-
-__/source/critical_provider.i: __/source/critical_provider.cpp.i
-.PHONY : __/source/critical_provider.i
-
-# target to preprocess a source file
-__/source/critical_provider.cpp.i:
-	cd /home/fdachs/Coding/wfrp_sim/build && $(MAKE) $(MAKESILENT) -f test/CMakeFiles/runTests.dir/build.make test/CMakeFiles/runTests.dir/__/source/critical_provider.cpp.i
-.PHONY : __/source/critical_provider.cpp.i
-
-__/source/critical_provider.s: __/source/critical_provider.cpp.s
-.PHONY : __/source/critical_provider.s
-
-# target to generate assembly for a file
-__/source/critical_provider.cpp.s:
-	cd /home/fdachs/Coding/wfrp_sim/build && $(MAKE) $(MAKESILENT) -f test/CMakeFiles/runTests.dir/build.make test/CMakeFiles/runTests.dir/__/source/critical_provider.cpp.s
-.PHONY : __/source/critical_provider.cpp.s
+die_tests/fast:
+	cd /home/fdachs/Coding/wfrp_sim/build && $(MAKE) $(MAKESILENT) -f test/CMakeFiles/die_tests.dir/build.make test/CMakeFiles/die_tests.dir/build
+.PHONY : die_tests/fast
 
 __/source/die.o: __/source/die.cpp.o
 .PHONY : __/source/die.o
 
 # target to build an object file
 __/source/die.cpp.o:
-	cd /home/fdachs/Coding/wfrp_sim/build && $(MAKE) $(MAKESILENT) -f test/CMakeFiles/runTests.dir/build.make test/CMakeFiles/runTests.dir/__/source/die.cpp.o
+	cd /home/fdachs/Coding/wfrp_sim/build && $(MAKE) $(MAKESILENT) -f test/CMakeFiles/die_tests.dir/build.make test/CMakeFiles/die_tests.dir/__/source/die.cpp.o
 .PHONY : __/source/die.cpp.o
 
 __/source/die.i: __/source/die.cpp.i
@@ -287,7 +188,7 @@ __/source/die.i: __/source/die.cpp.i
 
 # target to preprocess a source file
 __/source/die.cpp.i:
-	cd /home/fdachs/Coding/wfrp_sim/build && $(MAKE) $(MAKESILENT) -f test/CMakeFiles/runTests.dir/build.make test/CMakeFiles/runTests.dir/__/source/die.cpp.i
+	cd /home/fdachs/Coding/wfrp_sim/build && $(MAKE) $(MAKESILENT) -f test/CMakeFiles/die_tests.dir/build.make test/CMakeFiles/die_tests.dir/__/source/die.cpp.i
 .PHONY : __/source/die.cpp.i
 
 __/source/die.s: __/source/die.cpp.s
@@ -295,224 +196,32 @@ __/source/die.s: __/source/die.cpp.s
 
 # target to generate assembly for a file
 __/source/die.cpp.s:
-	cd /home/fdachs/Coding/wfrp_sim/build && $(MAKE) $(MAKESILENT) -f test/CMakeFiles/runTests.dir/build.make test/CMakeFiles/runTests.dir/__/source/die.cpp.s
+	cd /home/fdachs/Coding/wfrp_sim/build && $(MAKE) $(MAKESILENT) -f test/CMakeFiles/die_tests.dir/build.make test/CMakeFiles/die_tests.dir/__/source/die.cpp.s
 .PHONY : __/source/die.cpp.s
 
-__/source/engagement.o: __/source/engagement.cpp.o
-.PHONY : __/source/engagement.o
+test_die_roll.o: test_die_roll.cpp.o
+.PHONY : test_die_roll.o
 
 # target to build an object file
-__/source/engagement.cpp.o:
-	cd /home/fdachs/Coding/wfrp_sim/build && $(MAKE) $(MAKESILENT) -f test/CMakeFiles/runTests.dir/build.make test/CMakeFiles/runTests.dir/__/source/engagement.cpp.o
-.PHONY : __/source/engagement.cpp.o
+test_die_roll.cpp.o:
+	cd /home/fdachs/Coding/wfrp_sim/build && $(MAKE) $(MAKESILENT) -f test/CMakeFiles/die_tests.dir/build.make test/CMakeFiles/die_tests.dir/test_die_roll.cpp.o
+.PHONY : test_die_roll.cpp.o
 
-__/source/engagement.i: __/source/engagement.cpp.i
-.PHONY : __/source/engagement.i
-
-# target to preprocess a source file
-__/source/engagement.cpp.i:
-	cd /home/fdachs/Coding/wfrp_sim/build && $(MAKE) $(MAKESILENT) -f test/CMakeFiles/runTests.dir/build.make test/CMakeFiles/runTests.dir/__/source/engagement.cpp.i
-.PHONY : __/source/engagement.cpp.i
-
-__/source/engagement.s: __/source/engagement.cpp.s
-.PHONY : __/source/engagement.s
-
-# target to generate assembly for a file
-__/source/engagement.cpp.s:
-	cd /home/fdachs/Coding/wfrp_sim/build && $(MAKE) $(MAKESILENT) -f test/CMakeFiles/runTests.dir/build.make test/CMakeFiles/runTests.dir/__/source/engagement.cpp.s
-.PHONY : __/source/engagement.cpp.s
-
-__/source/entity.o: __/source/entity.cpp.o
-.PHONY : __/source/entity.o
-
-# target to build an object file
-__/source/entity.cpp.o:
-	cd /home/fdachs/Coding/wfrp_sim/build && $(MAKE) $(MAKESILENT) -f test/CMakeFiles/runTests.dir/build.make test/CMakeFiles/runTests.dir/__/source/entity.cpp.o
-.PHONY : __/source/entity.cpp.o
-
-__/source/entity.i: __/source/entity.cpp.i
-.PHONY : __/source/entity.i
+test_die_roll.i: test_die_roll.cpp.i
+.PHONY : test_die_roll.i
 
 # target to preprocess a source file
-__/source/entity.cpp.i:
-	cd /home/fdachs/Coding/wfrp_sim/build && $(MAKE) $(MAKESILENT) -f test/CMakeFiles/runTests.dir/build.make test/CMakeFiles/runTests.dir/__/source/entity.cpp.i
-.PHONY : __/source/entity.cpp.i
+test_die_roll.cpp.i:
+	cd /home/fdachs/Coding/wfrp_sim/build && $(MAKE) $(MAKESILENT) -f test/CMakeFiles/die_tests.dir/build.make test/CMakeFiles/die_tests.dir/test_die_roll.cpp.i
+.PHONY : test_die_roll.cpp.i
 
-__/source/entity.s: __/source/entity.cpp.s
-.PHONY : __/source/entity.s
-
-# target to generate assembly for a file
-__/source/entity.cpp.s:
-	cd /home/fdachs/Coding/wfrp_sim/build && $(MAKE) $(MAKESILENT) -f test/CMakeFiles/runTests.dir/build.make test/CMakeFiles/runTests.dir/__/source/entity.cpp.s
-.PHONY : __/source/entity.cpp.s
-
-__/source/feature.o: __/source/feature.cpp.o
-.PHONY : __/source/feature.o
-
-# target to build an object file
-__/source/feature.cpp.o:
-	cd /home/fdachs/Coding/wfrp_sim/build && $(MAKE) $(MAKESILENT) -f test/CMakeFiles/runTests.dir/build.make test/CMakeFiles/runTests.dir/__/source/feature.cpp.o
-.PHONY : __/source/feature.cpp.o
-
-__/source/feature.i: __/source/feature.cpp.i
-.PHONY : __/source/feature.i
-
-# target to preprocess a source file
-__/source/feature.cpp.i:
-	cd /home/fdachs/Coding/wfrp_sim/build && $(MAKE) $(MAKESILENT) -f test/CMakeFiles/runTests.dir/build.make test/CMakeFiles/runTests.dir/__/source/feature.cpp.i
-.PHONY : __/source/feature.cpp.i
-
-__/source/feature.s: __/source/feature.cpp.s
-.PHONY : __/source/feature.s
+test_die_roll.s: test_die_roll.cpp.s
+.PHONY : test_die_roll.s
 
 # target to generate assembly for a file
-__/source/feature.cpp.s:
-	cd /home/fdachs/Coding/wfrp_sim/build && $(MAKE) $(MAKESILENT) -f test/CMakeFiles/runTests.dir/build.make test/CMakeFiles/runTests.dir/__/source/feature.cpp.s
-.PHONY : __/source/feature.cpp.s
-
-__/source/overhead.o: __/source/overhead.cpp.o
-.PHONY : __/source/overhead.o
-
-# target to build an object file
-__/source/overhead.cpp.o:
-	cd /home/fdachs/Coding/wfrp_sim/build && $(MAKE) $(MAKESILENT) -f test/CMakeFiles/runTests.dir/build.make test/CMakeFiles/runTests.dir/__/source/overhead.cpp.o
-.PHONY : __/source/overhead.cpp.o
-
-__/source/overhead.i: __/source/overhead.cpp.i
-.PHONY : __/source/overhead.i
-
-# target to preprocess a source file
-__/source/overhead.cpp.i:
-	cd /home/fdachs/Coding/wfrp_sim/build && $(MAKE) $(MAKESILENT) -f test/CMakeFiles/runTests.dir/build.make test/CMakeFiles/runTests.dir/__/source/overhead.cpp.i
-.PHONY : __/source/overhead.cpp.i
-
-__/source/overhead.s: __/source/overhead.cpp.s
-.PHONY : __/source/overhead.s
-
-# target to generate assembly for a file
-__/source/overhead.cpp.s:
-	cd /home/fdachs/Coding/wfrp_sim/build && $(MAKE) $(MAKESILENT) -f test/CMakeFiles/runTests.dir/build.make test/CMakeFiles/runTests.dir/__/source/overhead.cpp.s
-.PHONY : __/source/overhead.cpp.s
-
-__/source/skill.o: __/source/skill.cpp.o
-.PHONY : __/source/skill.o
-
-# target to build an object file
-__/source/skill.cpp.o:
-	cd /home/fdachs/Coding/wfrp_sim/build && $(MAKE) $(MAKESILENT) -f test/CMakeFiles/runTests.dir/build.make test/CMakeFiles/runTests.dir/__/source/skill.cpp.o
-.PHONY : __/source/skill.cpp.o
-
-__/source/skill.i: __/source/skill.cpp.i
-.PHONY : __/source/skill.i
-
-# target to preprocess a source file
-__/source/skill.cpp.i:
-	cd /home/fdachs/Coding/wfrp_sim/build && $(MAKE) $(MAKESILENT) -f test/CMakeFiles/runTests.dir/build.make test/CMakeFiles/runTests.dir/__/source/skill.cpp.i
-.PHONY : __/source/skill.cpp.i
-
-__/source/skill.s: __/source/skill.cpp.s
-.PHONY : __/source/skill.s
-
-# target to generate assembly for a file
-__/source/skill.cpp.s:
-	cd /home/fdachs/Coding/wfrp_sim/build && $(MAKE) $(MAKESILENT) -f test/CMakeFiles/runTests.dir/build.make test/CMakeFiles/runTests.dir/__/source/skill.cpp.s
-.PHONY : __/source/skill.cpp.s
-
-__/source/state.o: __/source/state.cpp.o
-.PHONY : __/source/state.o
-
-# target to build an object file
-__/source/state.cpp.o:
-	cd /home/fdachs/Coding/wfrp_sim/build && $(MAKE) $(MAKESILENT) -f test/CMakeFiles/runTests.dir/build.make test/CMakeFiles/runTests.dir/__/source/state.cpp.o
-.PHONY : __/source/state.cpp.o
-
-__/source/state.i: __/source/state.cpp.i
-.PHONY : __/source/state.i
-
-# target to preprocess a source file
-__/source/state.cpp.i:
-	cd /home/fdachs/Coding/wfrp_sim/build && $(MAKE) $(MAKESILENT) -f test/CMakeFiles/runTests.dir/build.make test/CMakeFiles/runTests.dir/__/source/state.cpp.i
-.PHONY : __/source/state.cpp.i
-
-__/source/state.s: __/source/state.cpp.s
-.PHONY : __/source/state.s
-
-# target to generate assembly for a file
-__/source/state.cpp.s:
-	cd /home/fdachs/Coding/wfrp_sim/build && $(MAKE) $(MAKESILENT) -f test/CMakeFiles/runTests.dir/build.make test/CMakeFiles/runTests.dir/__/source/state.cpp.s
-.PHONY : __/source/state.cpp.s
-
-__/source/state_provider.o: __/source/state_provider.cpp.o
-.PHONY : __/source/state_provider.o
-
-# target to build an object file
-__/source/state_provider.cpp.o:
-	cd /home/fdachs/Coding/wfrp_sim/build && $(MAKE) $(MAKESILENT) -f test/CMakeFiles/runTests.dir/build.make test/CMakeFiles/runTests.dir/__/source/state_provider.cpp.o
-.PHONY : __/source/state_provider.cpp.o
-
-__/source/state_provider.i: __/source/state_provider.cpp.i
-.PHONY : __/source/state_provider.i
-
-# target to preprocess a source file
-__/source/state_provider.cpp.i:
-	cd /home/fdachs/Coding/wfrp_sim/build && $(MAKE) $(MAKESILENT) -f test/CMakeFiles/runTests.dir/build.make test/CMakeFiles/runTests.dir/__/source/state_provider.cpp.i
-.PHONY : __/source/state_provider.cpp.i
-
-__/source/state_provider.s: __/source/state_provider.cpp.s
-.PHONY : __/source/state_provider.s
-
-# target to generate assembly for a file
-__/source/state_provider.cpp.s:
-	cd /home/fdachs/Coding/wfrp_sim/build && $(MAKE) $(MAKESILENT) -f test/CMakeFiles/runTests.dir/build.make test/CMakeFiles/runTests.dir/__/source/state_provider.cpp.s
-.PHONY : __/source/state_provider.cpp.s
-
-__/source/utility.o: __/source/utility.cpp.o
-.PHONY : __/source/utility.o
-
-# target to build an object file
-__/source/utility.cpp.o:
-	cd /home/fdachs/Coding/wfrp_sim/build && $(MAKE) $(MAKESILENT) -f test/CMakeFiles/runTests.dir/build.make test/CMakeFiles/runTests.dir/__/source/utility.cpp.o
-.PHONY : __/source/utility.cpp.o
-
-__/source/utility.i: __/source/utility.cpp.i
-.PHONY : __/source/utility.i
-
-# target to preprocess a source file
-__/source/utility.cpp.i:
-	cd /home/fdachs/Coding/wfrp_sim/build && $(MAKE) $(MAKESILENT) -f test/CMakeFiles/runTests.dir/build.make test/CMakeFiles/runTests.dir/__/source/utility.cpp.i
-.PHONY : __/source/utility.cpp.i
-
-__/source/utility.s: __/source/utility.cpp.s
-.PHONY : __/source/utility.s
-
-# target to generate assembly for a file
-__/source/utility.cpp.s:
-	cd /home/fdachs/Coding/wfrp_sim/build && $(MAKE) $(MAKESILENT) -f test/CMakeFiles/runTests.dir/build.make test/CMakeFiles/runTests.dir/__/source/utility.cpp.s
-.PHONY : __/source/utility.cpp.s
-
-test_die.o: test_die.cpp.o
-.PHONY : test_die.o
-
-# target to build an object file
-test_die.cpp.o:
-	cd /home/fdachs/Coding/wfrp_sim/build && $(MAKE) $(MAKESILENT) -f test/CMakeFiles/runTests.dir/build.make test/CMakeFiles/runTests.dir/test_die.cpp.o
-.PHONY : test_die.cpp.o
-
-test_die.i: test_die.cpp.i
-.PHONY : test_die.i
-
-# target to preprocess a source file
-test_die.cpp.i:
-	cd /home/fdachs/Coding/wfrp_sim/build && $(MAKE) $(MAKESILENT) -f test/CMakeFiles/runTests.dir/build.make test/CMakeFiles/runTests.dir/test_die.cpp.i
-.PHONY : test_die.cpp.i
-
-test_die.s: test_die.cpp.s
-.PHONY : test_die.s
-
-# target to generate assembly for a file
-test_die.cpp.s:
-	cd /home/fdachs/Coding/wfrp_sim/build && $(MAKE) $(MAKESILENT) -f test/CMakeFiles/runTests.dir/build.make test/CMakeFiles/runTests.dir/test_die.cpp.s
-.PHONY : test_die.cpp.s
+test_die_roll.cpp.s:
+	cd /home/fdachs/Coding/wfrp_sim/build && $(MAKE) $(MAKESILENT) -f test/CMakeFiles/die_tests.dir/build.make test/CMakeFiles/die_tests.dir/test_die_roll.cpp.s
+.PHONY : test_die_roll.cpp.s
 
 # Help Target
 help:
@@ -521,56 +230,18 @@ help:
 	@echo "... clean"
 	@echo "... depend"
 	@echo "... edit_cache"
+	@echo "... install"
+	@echo "... install/local"
+	@echo "... install/strip"
+	@echo "... list_install_components"
 	@echo "... rebuild_cache"
-	@echo "... runTests"
-	@echo "... __/source/action_node.o"
-	@echo "... __/source/action_node.i"
-	@echo "... __/source/action_node.s"
-	@echo "... __/source/action_provider.o"
-	@echo "... __/source/action_provider.i"
-	@echo "... __/source/action_provider.s"
-	@echo "... __/source/attribute.o"
-	@echo "... __/source/attribute.i"
-	@echo "... __/source/attribute.s"
-	@echo "... __/source/condition.o"
-	@echo "... __/source/condition.i"
-	@echo "... __/source/condition.s"
-	@echo "... __/source/condition_provider.o"
-	@echo "... __/source/condition_provider.i"
-	@echo "... __/source/condition_provider.s"
-	@echo "... __/source/critical_provider.o"
-	@echo "... __/source/critical_provider.i"
-	@echo "... __/source/critical_provider.s"
+	@echo "... die_tests"
 	@echo "... __/source/die.o"
 	@echo "... __/source/die.i"
 	@echo "... __/source/die.s"
-	@echo "... __/source/engagement.o"
-	@echo "... __/source/engagement.i"
-	@echo "... __/source/engagement.s"
-	@echo "... __/source/entity.o"
-	@echo "... __/source/entity.i"
-	@echo "... __/source/entity.s"
-	@echo "... __/source/feature.o"
-	@echo "... __/source/feature.i"
-	@echo "... __/source/feature.s"
-	@echo "... __/source/overhead.o"
-	@echo "... __/source/overhead.i"
-	@echo "... __/source/overhead.s"
-	@echo "... __/source/skill.o"
-	@echo "... __/source/skill.i"
-	@echo "... __/source/skill.s"
-	@echo "... __/source/state.o"
-	@echo "... __/source/state.i"
-	@echo "... __/source/state.s"
-	@echo "... __/source/state_provider.o"
-	@echo "... __/source/state_provider.i"
-	@echo "... __/source/state_provider.s"
-	@echo "... __/source/utility.o"
-	@echo "... __/source/utility.i"
-	@echo "... __/source/utility.s"
-	@echo "... test_die.o"
-	@echo "... test_die.i"
-	@echo "... test_die.s"
+	@echo "... test_die_roll.o"
+	@echo "... test_die_roll.i"
+	@echo "... test_die_roll.s"
 .PHONY : help
 
 
